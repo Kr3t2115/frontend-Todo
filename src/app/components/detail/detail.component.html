@@ -1,0 +1,27 @@
+<div class="all">
+  <div [formGroup]="group" class="center">
+    <h1>Zaktualizuj zadanie</h1>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Dodaj zadanie</mat-label>
+
+      <input
+        type="text"
+        ngModel="{{ todo.content }}"
+        matInput
+        formControlName="content"
+      />
+      <!-- <input
+        value="gfadfgadfg"
+        matInput
+        placeholder="Ugotuj obiad"
+        formControlName="content"
+      /> -->
+    </mat-form-field>
+
+    <label>Czy zrobione:{{ complete }}</label>
+    <input type="checkbox" formControlName="completed" (click)="click()" />
+
+    <button mat-raised-button color="accent" (click)="submit()">Zmień</button>
+  </div>
+</div>

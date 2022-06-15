@@ -1,0 +1,103 @@
+<div class="center">
+  <div class="container">
+    <h1>Dodaj do listy</h1>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Podaj co masz do zrobienia?</mat-label>
+      <input
+        matInput
+        placeholder="Ugotuje obiad"
+        type="text"
+        [formControl]="task"
+      />
+      <button
+        mat-raised-button
+        color="accent"
+        style="float: right"
+        (click)="post()"
+      >
+        Dodaj
+      </button>
+    </mat-form-field>
+
+    <mat-tab-group
+      (selectedTabChange)="change($event)"
+      animationDuration="1000ms"
+    >
+      <mat-tab label="Wszystkie">
+        <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+          <div class="box" *ngFor="let todos of todo">
+            <h3 style="float: left; padding: 20px">{{ todos.content }}</h3>
+            <div style="display: innline-block">
+              <button
+                style="margin: 20px"
+                mat-mini-fab
+                [routerLink]="['/detail', todos.id]"
+                routerLinkActive="active"
+              >
+                <mat-icon>edit</mat-icon>
+              </button>
+
+              <button
+                style="margin: 20px"
+                mat-mini-fab
+                (click)="delete(todos.id)"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </div>
+        </cdk-virtual-scroll-viewport>
+      </mat-tab>
+      <mat-tab label="W toku">
+        <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+          <div class="box" *ngFor="let todos of todoFalse">
+            <h3 style="float: left; padding: 20px">{{ todos.content }}</h3>
+            <div style="display: innline-block">
+              <button
+                style="margin: 20px"
+                mat-mini-fab
+                [routerLink]="['/detail', todos.id]"
+                routerLinkActive="active"
+              >
+                <mat-icon>edit</mat-icon>
+              </button>
+
+              <button
+                style="margin: 20px"
+                mat-mini-fab
+                (click)="delete(todos.id)"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </div>
+        </cdk-virtual-scroll-viewport>
+      </mat-tab>
+      <mat-tab label="Skończone">
+        <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+          <div class="box" *ngFor="let todos of todoTrue">
+            <h3 style="float: left; padding: 20px">{{ todos.content }}</h3>
+            <div style="display: innline-block">
+              <button
+                style="margin: 20px"
+                mat-mini-fab
+                [routerLink]="['/detail', todos.id]"
+                routerLinkActive="active"
+              >
+                <mat-icon>edit</mat-icon>
+              </button>
+
+              <button
+                style="margin: 20px"
+                mat-mini-fab
+                (click)="delete(todos.id)"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </div>
+        </cdk-virtual-scroll-viewport>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

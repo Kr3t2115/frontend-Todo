@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap");
+
+h1 {
+  font-family: "Lato", sans-serif;
+  font-size: 30px;
+  margin: 40px;
+}
+.example-full-width {
+  width: 85%;
+  background-color: white;
+  height: 88px;
+  font-family: "Lato", sans-serif;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  background-color: white;
+  border-radius: 5px;
+}
+.example-viewport {
+  width: 100%;
+  height: 500px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 30%;
+  padding: 20px;
+  background-color: transparent;
+  font-family: "Lato", sans-serif;
+}
+
+.box {
+  font-family: "Lato", sans-serif;
+  width: 80%;
+  height: 50px;
+  text-align: center;
+  display: flex;
+  padding: 15px;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  background-color: #17020b;
+  color: white !important;
+  margin-top: 5px;
+  border-radius: 20px;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-family: "Lato", sans-serif;
+}
+mat-tab-group {
+  margin: 30px;
+}
